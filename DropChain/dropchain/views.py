@@ -27,14 +27,16 @@ def join_ch(request):
     """
     if request.method == 'POST':
         # Get data from POST method
-        data = FormParser().parse(request)
+        qdata = FormParser().parse(request)
+        #print qdata
+        data = qdata.dict()
+        #print data
+        #print data['challenge']
 
-        print data
-        print data["perro"]
         # Process data
-        challenge = Challenge.objects.get(name=data["challenge"])
-        user = User.objects.get(name=data["user"])
-        d_user = DropUser.objects.get(user=user)
+        challenge = Challenge.objects.get( name=data['challenge'] )
+        user = User.objects.get( name=data["user"] )
+        d_user = DropUser.objects.get( user=user )
 
         # Make and save changes
         d_user.challenges.add(challenge)
