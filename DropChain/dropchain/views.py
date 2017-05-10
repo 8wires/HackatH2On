@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view
-from rest_framework.parsers import JSONParser
+from rest_framework.parsers import FormParser
+from models import *
 
 def index(request):
     return HttpResponse("Hello, dear user. This is our page. You gotta love it. Feel the groove...    Isn't it yellow mellow?")
@@ -18,15 +19,24 @@ def load_ch(request):
 
 @api_view(['POST'])
 def join_ch(request):
-    """This function assigns a new challenge to a user."""
+    """
+    This function assigns a new challenge to a user.
+    POST form fields requirements:
+        challenge = (name of the challenge)
+        user = (user contract)
+    """
     if request.method == 'POST':
         # Get data from POST method
-        data = JSONParser().parse(request)
+        qdata = FormParser().parse(request)
+        #print qdata
+        data = qdata.dict()
+        #print data
+        #print data['challenge']
 
         # Process data
-        challenge = Challenge.objects.get(name=data["challenge"])
-        user = User.objects.get(name=data["user"])
-        d_user = DropUser.objects.get(user=user)
+        challenge = Challenge.objects.get( name=data['challenge'] )
+        user = User.objects.get( name=data["user"] )
+        d_user = DropUser.objects.get( user=user )
 
         # Make and save changes
         d_user.challenges.add(challenge)
