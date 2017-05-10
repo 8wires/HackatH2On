@@ -40,18 +40,24 @@ class Project(models.Model):
     goal = models.PositiveIntegerField()
 
 class Priority(models.Model):
+    class Meta:
+        unique_together = (('value', 'user'),('user','project'),)
+    
     PRIORITIES_VALUES = (
         ('1', '1'),
-        ('3', '2'),
+        ('2', '2'),
         ('3', '3'),
     )
+
     value = models.CharField(max_length=1, choices=PRIORITIES_VALUES)
     #value = PositiveSmallIntegerField() # From 1 (highest priority) to 3 (lowest)
-    project = models.ManyToManyField(Project)
+    project = models.OneToOneField(Project)
+    user = models.OneToOneField(User)
 
-class DropUser(User):
+class DropUser(models.Model):
     """User of our system. The username corresponds to the contract number,
     the first_name to the name the user wants to be seen as."""
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     challenges = models.ManyToManyField(Challenge)
     priorities = models.ForeignKey(Priority)
     #priority1 = models.ForeignKey(Project, on_delete=models.CASCADE)
