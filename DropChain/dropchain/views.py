@@ -47,8 +47,14 @@ def join_ch(request):
 @api_view(['GET'])
 def view_profile(request):
     """Allows a user to see his user info."""
-    pass
-
+    username =  request.GET.get('username','')
+    if(User.objects.filter(username=username).exists()):
+        user = User.objects.get(username=username)
+        #du = DropUser.objects.get(user=user)
+        return JsonResponse({'Name': user.username})
+    else:
+        return JsonResponse({'Error': "User not exists"})
+        
 def load_proj(request):
     """Loads all projects from DB."""
     pass
