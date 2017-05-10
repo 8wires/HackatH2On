@@ -34,6 +34,7 @@ def join_ch(request):
 
     return HttpResponse("User joined (rock'n'roll music fading)")
 
+@api_view(['GET'])
 def view_profile(request):
     """Allows a user to see his user info."""
     pass
@@ -45,3 +46,5 @@ def load_proj(request):
 def see_proj(request):
     """Renders project info."""
     pass
+
+
