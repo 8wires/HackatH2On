@@ -11,10 +11,12 @@ def index(request):
 
 def config_proj(request):
     """This function will change the priorities of the projects that the user has."""
+
     pass
 
 def load_ch(request):
     """This function makes estimations of the goals for the current user, based on his historical data from the database."""
+
     pass
 
 @api_view(['POST'])
@@ -54,13 +56,32 @@ def view_profile(request):
         return JsonResponse({'Name': user.username})
     else:
         return JsonResponse({'Error': "User not exists"})
+
+@api_view(['GET'])
+def load_reto(request):
+    """Allows a user to see his user info."""
+    reto = "I'm a reto"
+    # Check if exists, not right now
+    if(True): #Temporal
+        return JsonResponse({'Repo': reto})
+    else:
+        return JsonResponse({'Error': "User not exists"})
         
 def load_proj(request):
     """Loads all projects from DB."""
-    pass
+    proj = "I'm a reto"
+    # Check if exists, not right now
+    if(True): #Temporal
+        return JsonResponse({'Proj': proj})
+    else:
+        return JsonResponse({'Error': "User not exists"})
+    
 
 def see_proj(request):
     """Renders project info."""
+    proj = "I'm a detailed proj"
+    if(True): #Temporal
+        return JsonResponse({'Proj': proj})
+    else:
+        return JsonResponse({'Error': "User not exists"})
     pass
-
-
