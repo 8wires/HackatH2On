@@ -97,7 +97,3 @@ class DropUser(models.Model):
         dropuser = cls(user = user, challenges = challenges, priorities = priorities)
         return dropuser
 
-
-    #priority1 = models.ForeignKey(Project, on_delete=models.CASCADE)
-    #priority2 = models.ForeignKey(Project, on_delete=models.CASCADE)
-    #priority3 = models.ForeignKey(Project, on_delete=models.CASCADE)

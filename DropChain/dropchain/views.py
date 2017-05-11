@@ -11,7 +11,7 @@ def index(request):
 
 def config_proj(request):
     """This function will change the priorities of the projects that the user has."""
-
+    
     pass
 
 def load_ch(request):
