@@ -22,6 +22,7 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^crowdfunding_detail', views.crowdfunding_detail, name='crowdfunding_detail'),
 	url(r'^crowdfunding_listing', views.crowdfunding_listing, name='crowdfunding_listing'),
+    url(r'^ranking_listing', views.ranking_listing, name='ranking_listing'),
     url(r'^admin/', admin.site.urls),
 ]
 

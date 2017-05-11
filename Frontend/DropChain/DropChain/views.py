@@ -10,3 +10,6 @@ def crowdfunding_detail(request):
 
 def crowdfunding_listing(request):
     return render_to_response('crowdfunding_listing.html')
+
+def ranking_listing(request):
+    return render_to_response('ranking_listing.html')
