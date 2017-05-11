@@ -10,13 +10,14 @@ def index(request):
 # User experience functions
 
 def config_proj(request):
-    """This function will change the priorities of the projects that the user has."""
-    
+    """ This function will change the priorities of the projects that the user has. """
+
+
+
     pass
 
 def load_ch(request):
-    """This function makes estimations of the goals for the current user, based on his historical data from the database."""
-
+    """ This function makes estimations of the goals for the current user, based on his historical data from the database. """
     pass
 
 @api_view(['POST'])
@@ -78,10 +79,26 @@ def load_proj(request):
     
 
 def see_proj(request):
-    """Renders project info."""
+    """ Renders project info."""
     proj = "I'm a detailed proj"
     if(True): #Temporal
         return JsonResponse({'Proj': proj})
     else:
         return JsonResponse({'Error': "User not exists"})
     pass
+
+
+def NewUser(request):
+    """ Creates a new user """
+    return JsonResponse({'User': 'Quim'})
+
+
+
+def NewProject(request):
+    """ Creates a new user """
+    return JsonResponse({'Project': 'Quim'})
+
+
+def NewChallenge(request):
+    """ Creates a new user """
+    return JsonResponse({'Challenge': 'Quim'})
