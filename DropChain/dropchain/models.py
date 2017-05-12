@@ -40,14 +40,22 @@ class Month(models.Model):
 #class MonthChallenge(Challenge):
 #    months = models.ManyToManyField(Month)
 
-class Challenge(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
-    description = models.CharField(max_length=1000)
+class TypeChallenge(models.Model):
+    name = models.TextField(max_length=100)
+    description = models.CharField(max_length=1000, null=True)
     multiplier = models.PositiveSmallIntegerField(default=1) # Reward multiplier
-    goal = models.PositiveSmallIntegerField()   # Is it a percentage??? (0 to 1)
     hours = models.ManyToManyField(Hour)
     days = models.ManyToManyField(Day)
     months = models.ManyToManyField(Month)
+
+    @classmethod
+    def create(cls, name):
+        typechallenge = cls(name = name)
+        return typechallenge
+
+class Challenge(models.Model):
+    typechallenge = models.ForeignKey(TypeChallenge, on_delete=models.CASCADE, null=True)
+    goal = models.PositiveSmallIntegerField()   # Is it a percentage??? (0 to 1)
 
     @classmethod
     def create(cls, name, description, multiplier, goal, hours, days, months):
@@ -68,7 +76,7 @@ class Project(models.Model):
 class Priority(models.Model):
     class Meta:
         unique_together = (('value', 'user'),('user','project'),)
-    
+
     PRIORITIES_VALUES = (
         ('1', '1'),
         ('2', '2'),
@@ -96,4 +104,3 @@ class DropUser(models.Model):
     def create(cls, user):
         dropuser = cls(user = user)
         return dropuser
-

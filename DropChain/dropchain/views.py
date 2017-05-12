@@ -24,7 +24,7 @@ def join_ch(request):
     """
     This function assigns a new challenge to a user.
     POST form fields requirements:
-        challenge = (name of the challenge)
+        typechallenge = (name of the challenge)
         user = (user contract)
     """
     if request.method == 'POST':
@@ -36,9 +36,10 @@ def join_ch(request):
         #print data['challenge']
 
         # Process data
-        challenge = Challenge.objects.get( name=data['challenge'] )
-        user = User.objects.get( name=data["user"] )
-        d_user = DropUser.objects.get( user=user )
+        tc = TypeChallenge.objects.get(name=data['typechallenge'])
+        #challenge = Challenge.objects.get( name= data['challenge'] )
+        user = User.objects.get(name=data["user"])
+        d_user = DropUser.objects.get(user=user)
 
         # Make and save changes
         d_user.challenges.add(challenge)
@@ -66,7 +67,7 @@ def load_reto(request):
         return JsonResponse({'Repo': reto})
     else:
         return JsonResponse({'Error': "User not exists"})
-        
+
 def load_proj(request):
     """Loads all projects from DB."""
     proj = "I'm a reto"
@@ -75,7 +76,7 @@ def load_proj(request):
         return JsonResponse({'Proj': proj})
     else:
         return JsonResponse({'Error': "User not exists"})
-    
+
 
 def see_proj(request):
     """ Renders project info."""
@@ -98,7 +99,7 @@ def NewUser(request):
         data = qdata.dict()
         print data
         num_contract =  data['num_contract']
-        password = data['password']    
+        password = data['password']
         u = User.objects.all().filter(username=num_contract).exists()
         if not u:
             user = User.objects.create_user(num_contract,password)
