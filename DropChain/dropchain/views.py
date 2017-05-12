@@ -14,11 +14,6 @@ def config_proj(request):
     """ This function will change the priorities of the projects that the user has. """
     pass
 
-def load_ch(request):
-    """ This function makes estimations of the goals for the current user, based on his historical data from the database. """
-
-    pass
-
 @api_view(['POST'])
 def join_ch(request):
     """
@@ -41,13 +36,18 @@ def join_ch(request):
         d_user = DropUser.objects.get(user=user)
 
         # Create new challenge instance for the user
-        #challenge =
+        ## Función de Irene( inputs = typechallenge, user; output = goal)
+        goal = 7 # Dumb variable
+        challenge = Challenge.create(tc, goal)
 
         # Make and save changes
         d_user.challenges.add(challenge)
         d_user.save()
 
-    return HttpResponse("User joined (rock'n'roll music fading)")
+        return HttpResponse("User joined (rock'n'roll music fading)")
+
+    else:
+        return HttpResponse("WTF! Man, you have to do post for this, man!")
 
 @api_view(['GET'])
 def view_profile(request):
@@ -57,6 +57,16 @@ def view_profile(request):
         user = User.objects.get(username=username)
         #du = DropUser.objects.get(user=user)
         return JsonResponse({'Name': user.username})
+    else:
+        return JsonResponse({'Error': "User not exists"})
+
+@api_view(['GET'])
+def load_t_ch(request):
+    """Loads all challenges from DB."""
+    ch = "I'm a challenge"
+    # Check if exists, not right now
+    if(True): #Temporal
+        return JsonResponse({'Proj': proj})
     else:
         return JsonResponse({'Error': "User not exists"})
 
@@ -79,6 +89,7 @@ def load_proj(request):
     else:
         return JsonResponse({'Error': "User not exists"})
 
+def see_t_ch(request):
 
 def see_proj(request):
     """ Renders project info."""
