@@ -91,7 +91,6 @@ def see_proj(request):
 @api_view(['POST'])
 def NewUser(request):
     """ Creates a new user """
-    print "IM HERE"
     if request.method == 'POST':
         """ It functions with application/x-www-form-urlencoded format"""
         qdata = FormParser().parse(request)
@@ -115,17 +114,19 @@ def NewUser(request):
 def NewProject(request):
     """ Creates a new project """
     if request.method == 'POST':
-        username = request.POST.get('num_contract','')
-        u = User.objects.all.filter(username=num_contract).exists()
+        qdata = FormParser().parse(request)
+        data = qdata.dict()
+        num_contract =  data['num_contract']
+        u = User.objects.all().filter(username=num_contract).exists()
         if u:
             user = User.objects.get(username=num_contract)
-            if user.is_admin:
-                name_proj = request.POST.get('name','')
+            if user.is_staff:
+                name_proj =  data['name']
                 n = Project.objects.all().filter(name=name_proj).exists()
                 if not n:
-                    description = request.POST.get('description','')
-                    location = request.POST.get('location','')
-                    goal = request.POST.get('goal','')
+                    description = data['description']
+                    location = data['location']
+                    goal = data['goal']
                     proj = Project.create(name_proj,description,location,goal)
                     proj.save()
                     return JsonResponse({'Succes': 'All OK'})
