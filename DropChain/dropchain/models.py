@@ -93,7 +93,7 @@ class DropUser(models.Model):
     priorities = models.ForeignKey(Priority)
 
     @classmethod
-    def create(cls, user, challenges, priorities):
-        dropuser = cls(user = user, challenges = challenges, priorities = priorities)
+    def create(cls, user):
+        dropuser = cls(user = user)
         return dropuser
 

@@ -4,8 +4,9 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import FormParser
 from models import *
 
+@api_view(['GET'])
 def index(request):
-    return HttpResponse("Hello, dear user. This is our page. You gotta love it. Feel the groove...    Isn't it yellow mellow?")
+        return JsonResponse({'User': 'Quim'})
 
 # User experience functions
 
@@ -90,12 +91,17 @@ def see_proj(request):
 @api_view(['POST'])
 def NewUser(request):
     """ Creates a new user """
+    print "IM HERE"
     if request.method == 'POST':
-        username = request.POST.get('num_contract','')
-        password = request.POST.get('password','')
-        u = User.objects.all.filter(username=num_contract).exists()
+        """ It functions with application/x-www-form-urlencoded format"""
+        qdata = FormParser().parse(request)
+        data = qdata.dict()
+        print data
+        num_contract =  data['num_contract']
+        password = data['password']    
+        u = User.objects.all().filter(username=num_contract).exists()
         if not u:
-            user = User.objects.create_user(username,password)
+            user = User.objects.create_user(num_contract,password)
             user.save()
             return JsonResponse({'Succes': 'All OK'})
 
@@ -126,7 +132,7 @@ def NewProject(request):
                 else:
                     return JsonResponse({'Error': 'Project already exists'})
             else:
-                return return JsonResponse({'Error': 'User is not admin'})
+                return JsonResponse({'Error': 'User is not admin'})
         else:
             return JsonResponse({'Error': 'User not exists'})
     else:
