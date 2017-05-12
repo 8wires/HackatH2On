@@ -41,7 +41,7 @@ def join_ch(request):
         d_user = DropUser.objects.get(user=user)
 
         # Create new challenge instance for the user
-        challenge =
+        #challenge =
 
         # Make and save changes
         d_user.challenges.add(challenge)

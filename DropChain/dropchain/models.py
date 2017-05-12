@@ -49,7 +49,7 @@ class TypeChallenge(models.Model):
     multiplier = models.PositiveSmallIntegerField(default=1) # Multiplicador de donacion. Alto para emergencias como esta (x6)
     hours = models.ManyToManyField(Hour) # Horas del dia durante las que se aplicara el reto (1-24)
     days = models.ManyToManyField(Day) # Dias de la semana durante los que se aplicara el reto (1-7)
-    months = models.ManyToManyField(Month) # Meses del año durante los que se aplicara el reto (1-12)
+    months = models.ManyToManyField(Month) # Meses del anyo durante los que se aplicara el reto (1-12)
     obj = models.PositiveSmallIntegerField(default=100) # Porcentaje de consumo que debera aplicarse para conseguir el reto
 
     @classmethod
