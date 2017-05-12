@@ -41,25 +41,30 @@ class Month(models.Model):
 #    months = models.ManyToManyField(Month)
 
 class TypeChallenge(models.Model):
-    name = models.TextField(max_length=100)
-    description = models.CharField(max_length=1000, null=True)
-    multiplier = models.PositiveSmallIntegerField(default=1) # Reward multiplier
-    hours = models.ManyToManyField(Hour)
-    days = models.ManyToManyField(Day)
-    months = models.ManyToManyField(Month)
+    """Instance of type of challenge. Example: 'Tuberia rota en Gracia. Consume
+    solo un 20 porciento para salvar a la ciudad.'"""
+
+    name = models.TextField(max_length=100) # Nombre del reto: 'Tuberia rota en Gracia'
+    description = models.CharField(max_length=1000, null=True) # Descripcion: 'Consume solo un 20 porciento para salvar a la ciudad'
+    multiplier = models.PositiveSmallIntegerField(default=1) # Multiplicador de donacion. Alto para emergencias como esta (x6)
+    hours = models.ManyToManyField(Hour) # Horas del dia durante las que se aplicara el reto (1-24)
+    days = models.ManyToManyField(Day) # Dias de la semana durante los que se aplicara el reto (1-7)
+    months = models.ManyToManyField(Month) # Meses del año durante los que se aplicara el reto (1-12)
+    obj = models.PositiveSmallIntegerField(default=100) # Porcentaje de consumo que debera aplicarse para conseguir el reto
 
     @classmethod
-    def create(cls, name):
-        typechallenge = cls(name = name)
+    def create(cls, name, description, multiplier, hours, days, months, obj):
+        typechallenge = cls(name = name, description = description, multiplier = multiplier, hours = hours, days = days, months = months, obj = obj)
         return typechallenge
 
 class Challenge(models.Model):
-    typechallenge = models.ForeignKey(TypeChallenge, on_delete=models.CASCADE, null=True)
-    goal = models.PositiveSmallIntegerField()   # Is it a percentage??? (0 to 1)
+    """Instancia personalizada del reto para un usuario concreto. El objetivo esta adaptado a su consumo"""
+    typechallenge = models.ForeignKey(TypeChallenge, on_delete=models.CASCADE, null=True) # Tipo de reto
+    goal = models.PositiveSmallIntegerField()   # En litros
 
     @classmethod
-    def create(cls, name, description, multiplier, goal, hours, days, months):
-        challenge = cls(name = name, description = description, multiplier = multiplier, goal = goal, hours = hours, days = days, months = months)
+    def create(cls, typechallenge, goal):
+        challenge = cls(typechallenge=typechallenge, goal=goal)
         return challenge
 
 class Project(models.Model):

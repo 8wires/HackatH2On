@@ -37,9 +37,11 @@ def join_ch(request):
 
         # Process data
         tc = TypeChallenge.objects.get(name=data['typechallenge'])
-        #challenge = Challenge.objects.get( name= data['challenge'] )
         user = User.objects.get(name=data["user"])
         d_user = DropUser.objects.get(user=user)
+
+        # Create new challenge instance for the user
+        challenge =
 
         # Make and save changes
         d_user.challenges.add(challenge)
