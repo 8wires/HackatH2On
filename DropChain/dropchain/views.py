@@ -11,13 +11,11 @@ def index(request):
 
 def config_proj(request):
     """ This function will change the priorities of the projects that the user has. """
-
-
-
     pass
 
 def load_ch(request):
     """ This function makes estimations of the goals for the current user, based on his historical data from the database. """
+
     pass
 
 @api_view(['POST'])
@@ -88,17 +86,57 @@ def see_proj(request):
     pass
 
 
+
+@api_view(['POST'])
 def NewUser(request):
     """ Creates a new user """
-    return JsonResponse({'User': 'Quim'})
+    if request.method == 'POST':
+        username = request.POST.get('num_contract','')
+        password = request.POST.get('password','')
+        u = User.objects.all.filter(username=num_contract).exists()
+        if not u:
+            user = User.objects.create_user(username,password)
+            user.save()
+            return JsonResponse({'Succes': 'All OK'})
+
+        else:
+            return JsonResponse({'Error': 'User already exists'})
+    else:
+        return JsonResponse({'Error': 'Not POST method'})
 
 
-
+@api_view(['POST'])
 def NewProject(request):
-    """ Creates a new user """
-    return JsonResponse({'Project': 'Quim'})
+    """ Creates a new project """
+    if request.method == 'POST':
+        username = request.POST.get('num_contract','')
+        u = User.objects.all.filter(username=num_contract).exists()
+        if u:
+            user = User.objects.get(username=num_contract)
+            if user.is_admin:
+                name_proj = request.POST.get('name','')
+                n = Project.objects.all().filter(name=name_proj).exists()
+                if not n:
+                    description = request.POST.get('description','')
+                    location = request.POST.get('location','')
+                    goal = request.POST.get('goal','')
+                    proj = Project.create(name_proj,description,location,goal)
+                    proj.save()
+                    return JsonResponse({'Succes': 'All OK'})
+                else:
+                    return JsonResponse({'Error': 'Project already exists'})
+            else:
+                return return JsonResponse({'Error': 'User is not admin'})
+        else:
+            return JsonResponse({'Error': 'User not exists'})
+    else:
+        return JsonResponse({'Error': 'Not POST method'})
 
 
+@api_view(['POST'])
 def NewChallenge(request):
-    """ Creates a new user """
-    return JsonResponse({'Challenge': 'Quim'})
+    """ Creates a new Challenge """
+    if request.method == 'POST':
+        return JsonResponse({'User': 'Quim'})
+    else:
+        return JsonResponse({'Error': 'Not POST method'})

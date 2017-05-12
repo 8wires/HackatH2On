@@ -88,7 +88,7 @@ class Priority(models.Model):
 class DropUser(models.Model):
     """User of our system. The username corresponds to the contract number,
     the first_name to the name the user wants to be seen as."""
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     challenges = models.ManyToManyField(Challenge)
     priorities = models.ForeignKey(Priority)
 
