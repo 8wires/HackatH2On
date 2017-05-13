@@ -72,7 +72,7 @@ footer {
   width: 260px;
   height: 100%;
   float: left;
-  background-color: #2B333E;
+  background-color: #cccccc;
   position: fixed;
   left: 0; }
 
@@ -366,10 +366,10 @@ ul.notifications > li {
   z-index: 9; }
   .sidebar .nav > li > a {
     padding: 18px 30px;
-    color: #AEB7C2;
+    color: #363636;
     border-left: 5px solid transparent; }
     .sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus, .sidebar .nav > li > a.active {
-      color: #fff;
+      color: #d9d9d9;
       background-color: transparent; }
       .sidebar .nav > li > a:hover i, .sidebar .nav > li > a:focus i, .sidebar .nav > li > a.active i {
         color: #00AAFF; }

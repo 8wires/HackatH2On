@@ -932,5 +932,6 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 ul.the-icons{ margin:0;}
 .shortcodes h3{ clear:both;}
 .img_comment{ width:auto; height:auto;}
-#charity_progress .progress.active .bar.p80{ width:80% !important;}
+#charity_progress .progress.active .bar.p80{ width:50% !important;}
+.progress.active .bar.p80{ width:50% !important;}
 .m9p{ margin-bottom:9px !important;}
