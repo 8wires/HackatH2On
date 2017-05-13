@@ -44,17 +44,18 @@ class TypeChallenge(models.Model):
     """Instance of type of challenge. Example: 'Tuberia rota en Gracia. Consume
     solo un 20 porciento para salvar a la ciudad.'"""
 
-    name = models.TextField(max_length=100) # Nombre del reto: 'Tuberia rota en Gracia'
+    name = models.TextField(max_length=100, primary_key=True) # Nombre del reto: 'Tuberia rota en Gracia'
     description = models.CharField(max_length=1000, null=True) # Descripcion: 'Consume solo un 20 porciento para salvar a la ciudad'
     multiplier = models.PositiveSmallIntegerField(default=1) # Multiplicador de donacion. Alto para emergencias como esta (x6)
+    obj = models.PositiveSmallIntegerField(default=100) # Porcentaje de consumo que debera aplicarse para conseguir el reto
+
     hours = models.ManyToManyField(Hour) # Horas del dia durante las que se aplicara el reto (1-24)
     days = models.ManyToManyField(Day) # Dias de la semana durante los que se aplicara el reto (1-7)
     months = models.ManyToManyField(Month) # Meses del anyo durante los que se aplicara el reto (1-12)
-    obj = models.PositiveSmallIntegerField(default=100) # Porcentaje de consumo que debera aplicarse para conseguir el reto
 
     @classmethod
-    def create(cls, name, description, multiplier, hours, days, months, obj):
-        typechallenge = cls(name = name, description = description, multiplier = multiplier, hours = hours, days = days, months = months, obj = obj)
+    def create(cls, name, description, multiplier, obj):
+        typechallenge = cls(name = name, description = description, multiplier = multiplier, obj = obj)
         return typechallenge
 
 class Challenge(models.Model):
@@ -68,10 +69,11 @@ class Challenge(models.Model):
         return challenge
 
 class Project(models.Model):
+    """Modelo de proyecto"""
     name = models.CharField(max_length=100, primary_key=True)
     description = models.CharField(max_length=1000)
     location = models.CharField(max_length=100) # Neighbourhood, city or other (no specific format)
-    goal = models.PositiveIntegerField()
+    goal = models.PositiveIntegerField() # El agua al que hay que llegar para que acabe
 
     @classmethod
     def create(cls, name, description, location, goal):
@@ -101,11 +103,11 @@ class Priority(models.Model):
 class DropUser(models.Model):
     """User of our system. The username corresponds to the contract number,
     the first_name to the name the user wants to be seen as."""
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     challenges = models.ManyToManyField(Challenge)
-    priorities = models.ForeignKey(Priority)
+    priorities = models.ForeignKey(Priority, null=True)
 
-    @classmethod
-    def create(cls, user):
-        dropuser = cls(user = user)
-        return dropuser
+    # @classmethod
+    # def create(cls, user):
+    #     dropuser = cls(user = user)
+    #     return dropuser
