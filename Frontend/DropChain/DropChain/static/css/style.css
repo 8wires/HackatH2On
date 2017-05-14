@@ -601,9 +601,9 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 .cart_btn_wrapper a{  padding:10px 40px; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; }
 .cart_btn_wrapper a:hover{ color:#fff; }
 .continue_shopping{ border:1px solid #6c6c6c; background:#363636 !important;}
-.btns{ border:1px solid #a5e7ea; background:#1cc3c9 !important;  padding:10px 40px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; }
-.title_right .btns{ border:1px solid #a5e7ea; background:#1cc3c9 !important;  padding:7px 20px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; margin-bottom:10px; }
-.checkout_btn{ border:1px solid #a5e7ea; background:#1cc3c9;}
+.btns{ border:1px solid #a5e7ea; background:#5FC536 !important;  padding:10px 40px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; }
+.title_right .btns{ border:1px solid #a5e7ea; background:#5FC536 !important;  padding:7px 20px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; margin-bottom:10px; }
+.checkout_btn{ border:1px solid #a5e7ea; background:#5FC536;}
 .cart_btn_wrapper{ margin:20px 0; }
 .title_right{text-align:right; padding:0 20px ;}
 .title_right a{background:url('../images/link_bg.jpg') bottom left repeat-x #fff; display:inline-block; border:1px solid #d3d3d3; padding:7px 20px;  color:#787878; font-size:14px; margin-bottom:0; margin-left:10px; }
@@ -714,7 +714,7 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 #product h3 a, #product h3{ color:#000; font-weight:norma;}
 #product .price { color:#1cc3c9; font-size:24px; display:inline-block; margin:10px 0;}
 #product .price del{ color:#aaaaaa; font-size:15px; }
-#product .btn{ border:none !important; background:#1cc3c9 !important;  padding:7px 20px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; text-shadow:none !important;}
+#product .btn{ border:none !important; background:#5FC536 !important;  padding:7px 20px !important; display:inline-block; color:#fff; border-radius:5px; -webkit-border-radius:5px; font-size:14px; text-shadow:none !important;}
 .product_view hr{    -moz-border-bottom-colors: none;    -moz-border-left-colors: none;    -moz-border-right-colors: none;    -moz-border-top-colors: none;    border:0;    clear: both;    margin: 20px 0}
 .product_view .pagination{float:left; }
 .product_view .pagination a{ color:#000; }
@@ -725,14 +725,14 @@ span.countdown_section:first-child { display:inline-block; color:#fff; font-size
 .sale_icon{ background:url('../images/sale_icon.png') top center no-repeat; width:47px; height:47px; position:absolute; right:10px; top:10px; }
 /** List view **/
 #product_list #product{ padding:20px;  -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;  margin-bottom:20px; }
-#product_list .product_img{  margin:0px; }
-#product_list .product_description{ text-align:left;  -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; }
+#product_list .product_img{  margin:2px; display: inline-block; float:left; }
+#product_list .product_description{ text-align:right;  float: right; -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;     display: inline-block;}
 /** End of List View **/
 /** Team Page **/
 .team h3{  padding:20px;  -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;  background:#fff; font-weight:normal; margin-bottom:25px; }
 .team h3 i{ font-size:20px; font-weight:normal; line-height:24px;}
 .team_member{ overflow:hidden; background:#fff;}
-.team_member h5{ margin:0; }
+.team_member h5{ margin:1%; }
 .team_member_description{ padding: 20px;  -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;  }
 .team_member_description .mem_desig{ display:inline-block; padding-bottom:10px; border-bottom:1px solid #1cc3c9; margin-bottom:10px; }
 .team_member  #n_social{ font-size:20px; margin-top:0; }
@@ -935,3 +935,5 @@ ul.the-icons{ margin:0;}
 #charity_progress .progress.active .bar.p80{ width:50% !important;}
 .progress.active .bar.p80{ width:50% !important;}
 .m9p{ margin-bottom:9px !important;}
+.member_img{ margin: 1%;}
+

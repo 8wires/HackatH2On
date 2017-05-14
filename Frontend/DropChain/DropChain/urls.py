@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^visualize', views.visualize, name='visualize'),
 	url(r'^crowdfunding_detail', views.crowdfunding_detail, name='crowdfunding_detail'),
 	url(r'^crowdfunding_listing', views.crowdfunding_listing, name='crowdfunding_listing'),
+    url(r'^challenge_detail', views.challenge_detail, name='challenge_detail'),
+    url(r'^challenge_listing_list', views.challenge_listing_list, name='challenge_listing_list'),
     url(r'^ranking_listing', views.ranking_listing, name='ranking_listing'),
     url(r'^admin/', admin.site.urls),
 ]
