@@ -1,0 +1,727 @@
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Title & BreadCrumbs -->
+	<section class="mtop">
+		<section class="container-fluid container">
+			
+			
+				</section>		<!-- end of Page Title -->
+		
+	</section>
+	<!-- End of Tile & Breadcrumbs -->
+
+<!-- Page Content Container -->
+<section id="content" class="mbtm product_grid">
+	<section class="container-fluid container">
+	
+		<section class="row-fluid">
+			
+			<section class="span12 product_view" id="product_list">  
+ 		
+					<figure class="span12 first" id="category_title">
+							<div class="span10 first"> <h3> Soluciones Innovadoras </h3></div>
+					</figure>
+					
+					<Section class="product_list_holder" >
+					
+
+						<figure class="team_member span3 first">
+								<div class="member_img">
+									<img src="http://cdn.thegadgetflow.com/wp-content/uploads/2015/07/Meet-ORKA-The-Smart-Water-Bottle-01.jpg" alt="Team Member" />
+								</div>
+								<div class="team_member_description">
+									<h5>  This is a test </h5>
+									<span class="mem_desig"> John Nash </span>
+							
+										<figure class="n_social"> 
+											<a href="#"> <i class="icon-heart"></i> </a> 
+											<a href="#"> <i class="icon-share-alt"></i> </a> 
+										</figure>
+							
+								</div>
+						</figure>
+					
+						{%for t in tweets%}
+							<figure class="team_member span3">
+								<div class="member_img">
+									<img src="http://pbs.twimg.com/media/C_wzOp3XYAEsco1.jpg " alt="Team Member" />
+								</div>
+								<div class="team_member_description">
+									<h5>  {{t.message}} </h5>
+									<span class="mem_desig"> {{t.author}} </span>
+							
+										<figure class="n_social"> 
+											<a href="#"> <i class="icon-heart"></i> </a> 
+											<a href="#"> <i class="icon-share-alt"></i> </a> 
+										</figure>
+							
+								</div>
+							</figure>
+						{% endfor %}
+						
+						<!--
+						<figure class="team_member span3 first">
+					<div class="member_img">
+						<img src="http://pbs.twimg.com/media/C_wzOp3XYAEsco1.jpg" alt="Team Member" />
+					</div>
+					<div class="team_member_description">
+						<h5>  Adrian Steve </h5>
+						<span class="mem_desig"> Founder </span>
+				
+							<figure class="n_social"> 
+								<a href="#"> <i class="icon-facebook"></i> </a> 
+								<a href="#"> <i class="icon-twitter"></i> </a> 
+								<a href="#"> <i class="icon-google-plus"></i> </a> 
+								<a href="#"> <i class="icon-linkedin"></i> </a> 
+								<a href="#"> <i class="icon-pinterest"></i> </a> 
+							</figure>
+				
+					</div>
+				</figure>
+
+				
+				<figure class="team_member span3">
+					<div class="member_img">
+						<img src="images/exective2.jpg" alt="Team Member" />
+					</div>
+					<div class="team_member_description">
+						<h5>  Willaim Kite </h5>
+						<span class="mem_desig"> Co-Director </span>
+				
+							<figure class="n_social"> 
+								<a href="#"> <i class="icon-facebook"></i> </a> 
+								<a href="#"> <i class="icon-twitter"></i> </a> 
+								<a href="#"> <i class="icon-google-plus"></i> </a> 
+								<a href="#"> <i class="icon-linkedin"></i> </a> 
+								<a href="#"> <i class="icon-pinterest"></i> </a> 
+							</figure>
+				
+					</div>
+				</figure>
+				-->
+						
+						
+					
+ 
+					</section>
+					
+					
+		
+		</section>
+					
+					
+					
+					
+				<div class="pagination" align="center">  
+                  <ul>  
+                    <li><a href="#">Prev</a></li>  
+                    <li class="active">  
+                      <a href="#">1</a>  
+                    </li>  
+                    <li><a href="#">2</a></li>  
+                    <li><a href="#">3</a></li>  
+                    <li><a href="#">4</a></li>  
+                    <li><a href="#">Next</a></li>  
+                  </ul>  
+                </div>						
+		
+		</section>
+			
+ 
+			
+		<!-- Title & BreadCrumbs -->
+	<section class="mtop">
+		<section class="container-fluid container">
+			
+			
+				</section>		<!-- end of Page Title -->
+		
+	</section>
+	<!-- End of Tile & Breadcrumbs -->
+	 
+	<!-- Page Content Container -->
+	<section id="content" class="mbtm fund_rasising_listing">
+		<section class="container-fluid container">
+		
+			<section class="row-fluid">
+				
+				<section class="row-fluid" id="fund_rasising_listing">  
+						
+						<figure class="span12 first" id="category_title">
+							<div class="span10 first"> <h3> Proyectos Ciudadanos </h3>	
+							</div>
+						</figure>
+						
+						<section class="span12 first projects_holder">
+							
+							<section class="span4 first fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Paredes verdes en tu barrio para naturalizar la ciudad</a></h3>
+								
+								<img src={%static "images/techos_verdes.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  12.387 L  
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 2.000.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 30 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Huertos urbanos para la asociación de vecinos de Vall d'Hebrón </a> </h3>
+								
+								<img src={%static "images/huerto_urbano.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection"> 12.265 L
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 200.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 204 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+										
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Recuperar la fuente y el parque del barrio en el parque de l'Oreneta </a> </h3>
+								
+								<img src={%static "images/fuente_parque.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  9.721 L
+									<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 200.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 39 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 74 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+						
+							<hr />	
+	 		
+						</section>
+					
+					<div class="pagination">  
+	                  <ul>  
+	                    <li><a href="#">Prev</a></li>  
+	                    <li class="active">  
+	                      <a href="#">1</a>  
+	                    </li>  
+	                    <li><a href="#">2</a></li>  
+	                    <li><a href="#">3</a></li>  
+	                    <li><a href="#">4</a></li>  
+	                    <li><a href="#">Next</a></li>  
+	                  </ul>  
+	                </div>						
+			
+		</section>
+
+		<section class="row-fluid">
+				
+				<section class="row-fluid" id="fund_rasising_listing">  
+						
+						<figure class="span12 first" id="category_title">
+							<div class="span10 first"> <h3> Fondo de Solidaridad y Apoyo a la Vulnerabilidad </h3>
+							</div>
+						</figure>
+						
+						<section class="span12 first projects_holder">
+							
+							<section class="span4 first fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Apoyo a 73 familias en situación de pobreza energética del barrio de Sants </a></h3>
+								
+								<img src={%static "images/sants_barri.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  12.387 L  
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 20.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyo
+										</div>
+									
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 30 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Apoyo a 126 familias en situación de pobreza energética del barrio del Raval </a> </h3>
+								
+								<img src={%static "images/raval_barri.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection"> 12.265 L
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 200.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 204 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+										
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Apoyo a 89 familias en situación de pobreza energética del barrio de Gràcia </a> </h3>
+								
+								<img src={%static "images/gracia_barri.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  9.721 L
+									<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 200.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 39 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 74 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+						
+							<hr />	
+	 		
+						</section>
+					
+					<div class="pagination">  
+	                  <ul>  
+	                    <li><a href="#">Prev</a></li>  
+	                    <li class="active">  
+	                      <a href="#">1</a>  
+	                    </li>  
+	                    <li><a href="#">2</a></li>  
+	                    <li><a href="#">3</a></li>  
+	                    <li><a href="#">4</a></li>  
+	                    <li><a href="#">Next</a></li>  
+	                  </ul>  
+	                </div>						
+			
+		</section>
+
+		<section class="row-fluid">
+				
+				<section class="row-fluid" id="fund_rasising_listing">  
+						
+						<figure class="span12 first" id="category_title">
+							<div class="span10 first"> <h3> Proyectos y Ayudas a Organizaciones </h3>	
+							</div>
+						</figure>
+						
+						<section class="span12 first projects_holder">
+							
+							<section class="span4 first fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Ayuda a la asociación CREAR con su factura del agua </a></h3>
+								
+								<img src={%static "images/ajuda_refugiat.png" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  12.387 L  
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 2.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyo
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 30 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Apoyo a Médicos Sin Fronteras </a> </h3>
+								
+								<img src={%static "images/medicos_sin_fronteras.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection"> 12.265 L
+								<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 20.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 147 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 204 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+										
+							<section class="span4 fund_project" id="charity_progress">
+								<h3> <a href="crowdfunding_detail.html"> Ayuda al departamento de derechos sociales del Ayuntamiento de Barcelona </a> </h3>
+								
+								<img src={%static "images/drets_socials.jpg" %} alt="Fund Featured Image" />
+
+							<span class="current_collection">  49.721 L
+									<div class="btn-group" style="float: right;">
+                					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Apoyar <span class="caret"></span></button>
+					                <ul class="dropdown-menu">
+					                  <li><a href="#">Prioridad 1</a></li>
+					                  <li><a href="#">Prioridad 2</a></li>
+					                  <li><a href="#">Prioridad 3</a></li>
+					                  <li class="divider"></li>
+					                  <li><a href="#">Dejar de apoyar</a></li>
+					                </ul>
+					              </div>
+					        </span>
+							
+							<h4> conseguidos del objetivo de 200.000 L </h4>
+							
+							<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+							</div>
+							 
+							 <div class="info"> 
+										<div class="span6 first">
+											<i class="icon-user"></i> <span> 39 </span> Apoyos
+										</div>
+										
+										<div class="span6">
+											<i class="icon-calendar-empty"></i> Quedan <span> 74 </span> días
+										</div>
+										
+								  </div>
+								  
+							</section>
+						
+							<hr />	
+	 		
+						</section>
+					
+					<div class="pagination">  
+	                  <ul>  
+	                    <li><a href="#">Prev</a></li>  
+	                    <li class="active">  
+	                      <a href="#">1</a>  
+	                    </li>  
+	                    <li><a href="#">2</a></li>  
+	                    <li><a href="#">3</a></li>  
+	                    <li><a href="#">4</a></li>  
+	                    <li><a href="#">Next</a></li>  
+	                  </ul>  
+	                </div>						
+			
+		</section>
+
+	</section>
+	<!-- Page Content Container -->
+
+	</section>
+
+</section>
+<!-- Page Content Container -->
+
+<!-- Start of Features Boxes -->
+	<section id="ngo_features" class="mtop">
+		<section class="container-fluid container">
+		<section class="row-fluid product_view">
+
+			<!-- Start of Features Box 1 -->
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-1"> 
+				<span class="img"> River Floods </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> DropKing/Queen Nv. 10 </strong>
+			<p> Llevas ahorrados 10.000 L de agua y te quedan 200 L para llegar al siguiente nivel </p>
+			
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+			
+		</figure>
+			<!-- End of Features Boxes 1 -->
+			
+			<!-- Start of Features Box 2 -->
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-2"> 
+				<span class="img"> Volcanic Eruptions </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> 100 Organizaciones </strong>
+			<p> Volcano alorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+		</figure>
+			<!-- End of Features Boxes 2 -->
+			
+			<!-- Start of Features Box 3 --> 
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-3"> 
+				<span class="img"> 10 Proyectos  </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> Thunder Storms </strong>
+			<p> Malorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+		</figure>
+			<!-- End of Features Boxes 3 -->
+			
+			<!-- Start of Features Box 4 -->		
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-4"> 
+				<span class="img"> Tsunami </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> Tsunami </strong>
+			<p> An malorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+		</figure>
+ 			<!-- End of Features Boxes 4 -->
+
+ 		</section>
+
+ 		<section id="ngo_features" class="mtop">
+
+ 		<section class="row-fluid product_view mtop">
+
+ 			<!-- Start of Features Box 1 -->
+		<figure class="span3 feature">
+			<div class="ftr_img f-img-1"> 
+				<span class="img"> River Floods </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> River Floods </strong>
+			<p> River floods prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+			
+		</figure>
+			<!-- End of Features Boxes 1 -->
+			
+			<!-- Start of Features Box 2 -->
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-2"> 
+				<span class="img"> Volcanic Eruptions </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> Volcanic Eruptions </strong>
+			<p> Volcano alorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+			
+		</figure>
+			<!-- End of Features Boxes 2 -->
+			
+			<!-- Start of Features Box 3 --> 
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-3"> 
+				<span class="img"> Thunder Storms  </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> Thunder Storms </strong>
+			<p> Malorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+									<div class="bar p80"></div>    
+			</div>
+			</div>
+			
+		</figure>
+			<!-- End of Features Boxes 3 -->
+			
+			<!-- Start of Features Box 4 -->		
+			<figure class="span3 feature">
+			<div class="ftr_img f-img-4"> 
+				<span class="img"> Tsunami </span>
+			</div>
+			<div class="ftr_txt">
+			<strong> Tsunami </strong>
+			<p> An malorum prompta, mel ea sumo semper nusquam. Soluta intellegebat vim id, vix timeam latine electram at. </p>
+			<div class="progress progress-striped active">  
+						<div class="bar p80"></div>    
+			</div>
+			</div>
+
+		</figure>
+ 			<!-- End of Features Boxes 4 -->
+ 	
+ 			</section>
+ 	</section>		
+	</section>
+	</section>
+	 
+</body>
+
+
+{% endblock %}
